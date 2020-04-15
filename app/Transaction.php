@@ -12,13 +12,6 @@ class Transaction extends Model
 
     public $table = 'transactions';
 
-    protected $dates = [
-        'updated_at',
-        'created_at',
-        'deleted_at',
-        'transaction_date',
-    ];
-
     protected $fillable = [
         'amount',
         'created_at',

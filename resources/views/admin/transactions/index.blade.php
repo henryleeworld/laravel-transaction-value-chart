@@ -88,22 +88,25 @@
       "showDropdowns": true,
       "showWeekNumbers": true,
       "alwaysShowCalendars": true,
+      showCustomRangeLabel: false,
       startDate: start,
       endDate: end,
       locale: {
           format: 'YYYY-MM-DD',
           firstDay: 1,
+          applyLabel: '套用',
+          cancelLabel: '取消',
       },
       ranges: {
-          'Today': [moment(), moment()],
-          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month': [moment().startOf('month'), moment().endOf('month')],
-          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
-          'This Year': [moment().startOf('year'), moment().endOf('year')],
-          'Last Year': [moment().subtract(1, 'year').startOf('year'), moment().subtract(1, 'year').endOf('year')],
-          'All time': [moment().subtract(30, 'year').startOf('month'), moment().endOf('month')],
+          '今天': [moment(), moment()],
+          '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          '前 7 天': [moment().subtract(6, 'days'), moment()],
+          '前 30 天': [moment().subtract(29, 'days'), moment()],
+          '本月': [moment().startOf('month'), moment().endOf('month')],
+          '上個月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+          '今年': [moment().startOf('year'), moment().endOf('year')],
+          '去年': [moment().subtract(1, 'year').startOf('year'), moment().subtract(1, 'year').endOf('year')],
+          '全部時間': [moment().subtract(30, 'year').startOf('month'), moment().endOf('month')]
       }
   });
 

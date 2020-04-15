@@ -11,13 +11,13 @@ $(document).ready(function () {
     );
   }
 
-  moment.updateLocale('en', {
+  moment.updateLocale('zh-tw', {
     week: {dow: 1} // Monday is the first day of the week
   })
 
   $('.date').datetimepicker({
     format: 'YYYY-MM-DD',
-    locale: 'en',
+    locale: 'zh-tw',
     icons: {
       up: 'fas fa-chevron-up',
       down: 'fas fa-chevron-down',
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
   $('.datetime').datetimepicker({
     format: 'YYYY-MM-DD HH:mm:ss',
-    locale: 'en',
+    locale: 'zh-tw',
     sideBySide: true,
     icons: {
       up: 'fas fa-chevron-up',
