@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyTransactionRequest;
 use App\Http\Requests\StoreTransactionRequest;
 use App\Http\Requests\UpdateTransactionRequest;
-use App\Transaction;
+use App\Models\Transaction;
 use Gate;
 use Illuminate\Http\Request;
+use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\DataTables\Facades\DataTables;
-use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 class TransactionsController extends Controller
 {
@@ -68,7 +68,7 @@ class TransactionsController extends Controller
             'chart_title'           => '每天金額（Days）',
             'chart_type'            => 'line',
             'report_type'           => 'group_by_date',
-            'model'                 => 'App\\Transaction',
+            'model'                 => 'App\\Models\\Transaction',
             'group_by_field'        => 'transaction_date',
             'group_by_period'       => 'day',
             'aggregate_function'    => 'sum',

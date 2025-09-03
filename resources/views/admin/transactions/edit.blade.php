@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route("admin.transactions.update", [$transaction->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="transaction_date">{{ trans('cruds.transaction.fields.transaction_date') }}</label>
                 <input class="form-control datetime {{ $errors->has('transaction_date') ? 'is-invalid' : '' }}" type="text" name="transaction_date" id="transaction_date" value="{{ old('transaction_date', $transaction->transaction_date) }}" required>
                 @if($errors->has('transaction_date'))
@@ -20,7 +20,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.transaction.fields.transaction_date_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="amount">{{ trans('cruds.transaction.fields.amount') }}</label>
                 <input class="form-control {{ $errors->has('amount') ? 'is-invalid' : '' }}" type="number" name="amount" id="amount" value="{{ old('amount', $transaction->amount) }}" step="0.01" required>
                 @if($errors->has('amount'))
@@ -30,7 +30,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.transaction.fields.amount_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="description">{{ trans('cruds.transaction.fields.description') }}</label>
                 <textarea class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{{ old('description', $transaction->description) }}</textarea>
                 @if($errors->has('description'))
@@ -40,7 +40,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.transaction.fields.description_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-0">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>
